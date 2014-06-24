@@ -11,5 +11,7 @@ namespace ProjectNugetExemplePackage
         public String NomeFantasia { get; set; }
 
         public int ID { get; set; }
+
+        public DateTime DataDeAbertura { get; set; }        
     }
 }
