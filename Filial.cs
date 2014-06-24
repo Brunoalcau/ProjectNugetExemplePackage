@@ -9,5 +9,7 @@ namespace ProjectNugetExemplePackage
     public class Filial
     {
         public String NomeFantasia { get; set; }
+
+        public int ID { get; set; }
     }
 }
