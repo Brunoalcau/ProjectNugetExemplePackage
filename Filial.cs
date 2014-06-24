@@ -12,6 +12,8 @@ namespace ProjectNugetExemplePackage
 
         public int ID { get; set; }
 
-        public DateTime DataDeAbertura { get; set; }        
+        public DateTime DataDeAbertura { get; set; }
+
+        public DateTime DataFechamento { get; set; }        
     }
 }
