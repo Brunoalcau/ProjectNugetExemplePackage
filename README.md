@@ -15,3 +15,37 @@ Para a criação do arquivo .nuspec existe dois passos a se seguidos :
 nuget spec
 ```
 
+
+#Publicando um pacote servidor nuget.org
+
+Depois de criar um pacote, você provavelmente vai querer compartilhá-lo com o mundo. O NuGet.exe possui um comando de publicação exatamente para essa finalidade. Antes de publicar, você precisará criar uma conta em nuget.org.
+
+Quando estiver registrado para uma conta, clique no link da sua conta para ver a sua chave de acesso. Essa chave é importante, pois ela identifica o comando nuget.exe para a galeria e é uma senha irrevogável.
+
+Quando tiver a sua chave, armazene-a em um local seguro usando o seguinte comando:
+
+nuget setApiKey b688a925-0956-40a0-8327-ff2251cf5f9a
+
+Isso feito, use o comando push para publicar o pacote na galeria:
+
+nuget push ProjectName.1.0.0.nupkg
+
+O comando valida a sua chave de API com a galeria, antes de carregar o pacote. Se você criou um pacote de símbolos, conforme discutimos anteriormente, especifique o sinalizador Symbols quando enviar por push o seu pacote:
+
+nuget push ProjectName.1.0.0.nupkg -Symbols
+
+Especifique o nome do pacote principal e não o nome do pacote de símbolos. O comando localiza o pacote de símbolos apropriado por convenção. O comando envia por push o pacote principal para a galeria do NuGet e o pacote de símbolos para o repositório symbolsource.org do parceiro.
+
+
+#Publicandp um pacote no servidor myget 
+
+Quando estiver registrado para uma conta, clique no link da sua conta para ver a sua chave de acesso. Essa chave é importante, pois ela identifica o comando nuget.exe para a galeria e é uma senha irrevogável.
+
+Quando tiver a sua chave, armazene-a em um local seguro usando o seguinte comando:
+
+nuget push ProjectName.1.0.0.0.nupkg chavedeseguranca -Source https://www.myget.org/F/teste/
+
+
+
+
+
